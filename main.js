@@ -109,121 +109,134 @@ var transactions = [
 ];
 
 
-// --------------------------------------------------
-// EXAMPLE QUESTION
-// --------------------------------------------------
-/*
-  Calculate the total number of transactions.
-*/
-var totalTransactions = transactions.length;
-
-console.log( 'The total number of transactions is:', totalTransactions );
-
-
-// --------------------------------------------------
-// QUESTION 01
-// --------------------------------------------------
-/*
-  Calculate the total number of 'sales'.
-
-  HINT(S):
-  - Not all transactions are 'sales'.
-*/
-var numSales;
-
-/*
-  Hey, welcome to the first question!
-
-  Here's a breakdown of the question, and some pointers on how to get started!
-    - A variable has been declared a few lines above (`numSales`).
-    - Just below, the contents of the `numSales` variable are logged to the console.
-    - Your job is to assign the variable to the correct value (in this case: the total number of sales) *BEFORE* it is logged out.
-    - You can do this by:
-      - Adding an `=` sign (we are *assigning* something after all)
-      - Starting with the `transactions` variable (see the example question);
-      - Adding one or more methods to transform/extract the value we're looking for.
-      - If your solution is correct, `numSales` should be equal to 5.
-
-  You can solve the remaining questions in the same way!
-
-  P.S.
-  The breakdown above takes up a lot of space, feel free to move it to the top or bottom of the file!
-*/
-
-console.log( 'The total number of sales is:', numSales );
-
-
-// --------------------------------------------------
-// QUESTION 02
-// --------------------------------------------------
-/*
-  Calculate the total number of 'purchases'.
-*/
-var numPurchases;
-
-console.log( 'The total number of purchases is:', numPurchases );
-
-
-// --------------------------------------------------
-// QUESTION 03
-// --------------------------------------------------
-/*
-  Calculate the total number of 'cash' 'sales'.
-
-  HINT(S):
-  - Don't forget that 'purchases' can also be made in 'cash'!
-*/
-var numCashSales;
-
-console.log( 'The total number of cash sales is:', numCashSales );
-
-
-// --------------------------------------------------
-// QUESTION 04
-// --------------------------------------------------
-/*
-  Calculate the total number of 'credit' 'purchases'.
-
-  HINT(S):
-  - Make sure to exclude any 'sales' made by 'credit'!
-*/
-var numCreditPurchases;
-
-console.log( 'The total number of credit purchases is:', numCreditPurchases );
-
-
-// --------------------------------------------------
-// QUESTION 05
-// --------------------------------------------------
-/*
-  Create an array that includes all of vendors which appear in the transactions data set.
-  eg. `[ 'vendor one', 'vendor two', ... ]
-
-  HINT(S):
-  - Not all transactions have a 'vendor'!
-  - The assembled array should be made up of strings, not full `transaction` objects.
-  - This array is allowed to contain duplicate values.
-*/
-var uniqueVendors;
-
-console.log( 'The unique vendors are:', uniqueVendors );
-
-
-// --------------------------------------------------
-// QUESTION 06
-// --------------------------------------------------
-/*
-  Create an array that includes all of *unique* customers which appear in the transactions data set.
-  eg. `[ 'customer one', 'customer two', ... ]
-
-  HINT(S):
-  - Not all transactions have a 'customer'!
-  - The assembled array should be made up of strings, not full `transaction` objects.
-  - Make sure that the resulting array *does not* include any duplicates.
-*/
-var uniqueCustomers;
-
-console.log( 'The unique customers are:', uniqueCustomers );
+// // --------------------------------------------------
+// // EXAMPLE QUESTION
+// // --------------------------------------------------
+// /*
+//   Calculate the total number of transactions.
+// */
+// var totalTransactions = transactions.length;
+//
+// console.log( 'The total number of transactions is:', totalTransactions );
+//
+//
+// // --------------------------------------------------
+// // QUESTION 01
+// // --------------------------------------------------
+// /*
+//   Calculate the total number of 'sales'.
+//
+//   HINT(S):
+//   - Not all transactions are 'sales'.
+// */
+// var sales = transactions.filter(function(el){
+//  return el.type === 'sale';
+//
+// }).length;
+//
+//
+// console.log( 'The total number of sales is:', sales );
+//
+//
+//
+// // --------------------------------------------------
+// // QUESTION 02
+// // --------------------------------------------------
+//
+// var numPurchases = transactions.filter(function(el){
+//   return el.type === 'purchase'
+//
+//
+// }).length
+//
+//
+// console.log( 'The total number of purchases is:', numPurchases );
+//
+//
+// // --------------------------------------------------
+// // QUESTION 03
+// // --------------------------------------------------
+// /*
+//   Calculate the total number of 'cash' 'sales'.
+//
+//   HINT(S):
+//   - Don't forget that 'purchases' can also be made in 'cash'!
+// */
+// var numCashSales = transactions.filter(function(el){
+//   return el.type === 'sale' && el.paymentMethod === 'cash'
+//
+// }).length
+//
+// console.log( 'The total number of cash sales is:', numCashSales );
+//
+//
+// // --------------------------------------------------
+// // QUESTION 04
+// // --------------------------------------------------
+// /*
+//   Calculate the total number of 'credit' 'purchases'.
+//
+//   HINT(S):
+//   - Make sure to exclude any 'sales' made by 'credit'!
+// */
+// var numCreditPurchases = transactions.filter(function(el){
+//   return el.paymentMethod === 'credit'
+//
+// }).length
+//
+// console.log( 'The total number of credit purchases is:', numCreditPurchases );
+//
+//
+// // --------------------------------------------------
+// // QUESTION 05
+// // --------------------------------------------------
+// /*
+//   Create an array that includes all of vendors which appear in the transactions data set.
+//   eg. `[ 'vendor one', 'vendor two', ... ]
+//
+//   HINT(S):
+//   - Not all transactions have a 'vendor'!
+//   - The assembled array should be made up of strings, not full `transaction` objects.
+//   - This array is allowed to contain duplicate values.
+// */
+// var uniqueVendors = transactions.map(function(el){
+//   return el.vendor
+//
+//
+// })
+// .filter(function(el){
+//
+//   return el !== undefined
+// })
+//
+// console.log( 'The unique vendors are:', uniqueVendors );
+//
+//
+// // --------------------------------------------------
+// // QUESTION 06
+// // --------------------------------------------------
+// /*
+//   Create an array that includes all of *unique* customers which appear in the transactions data set.
+//   eg. `[ 'customer one', 'customer two', ... ]
+//
+//   HINT(S):
+//   - Not all transactions have a 'customer'!
+//   - The assembled array should be made up of strings, not full `transaction` objects.
+//   - Make sure that the resulting array *does not* include any duplicates.
+// */
+//
+// function onlyUnique(value, index, self){
+// return self.indexOf(value) === index;
+//
+// }
+//
+//
+// var uniqueCustomers = transactions.map(function(el){
+//   return el.customer
+// }).filter(onlyUnique);
+//
+//
+// console.log( 'The unique customers are:', uniqueCustomers );
 
 
 // --------------------------------------------------
@@ -239,10 +252,17 @@ console.log( 'The unique customers are:', uniqueCustomers );
   - There may be more than 1 'sale' that includes 5 or more items.
   - Individual transactions do not have either `name` or `numItems` properties, we'll have to add them to the output.
 */
-var bigSpenders;
-
-console.log( 'The "big spenders" are:', bigSpenders );
-
+//
+// var bigSpenders = transactions.filter(function(el){
+//   return el.items.length >=5 && el.type === 'sale'
+// })
+//
+// var sale = bigSpenders.map(function(sale){
+//   return {name:sale.customer, numItems: sale.items.length}
+//
+// }  )
+//
+// console.log( 'The "big spenders" are:', sale);
 
 // --------------------------------------------------
 // QUESTION 08
@@ -253,8 +273,12 @@ console.log( 'The "big spenders" are:', bigSpenders );
   HINT(S):
   - Transactions don't have 'prices', but their 'items' do!
 */
-var sumSales;
 
+
+var sumSales = transactions.map(function(transactions[0]){
+  return el.items
+
+})
 console.log( 'The sum of all sales is:', sumSales );
 
 
